@@ -20,15 +20,15 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 788989025800.dkr.ecr.ap-south-1.amazonaws.com
-#       - docker login -u AWS -p $(aws ecr get-login-password --region ap-south-1) 788989025800.dkr.ecr.ap-south-1.amazonaws.com
+     #- docker login -u AWS -p $(aws ecr get-login-password --region ap-south-1) 788989025800.dkr.ecr.ap-south-1.amazonaws.com
       - REPOSITORY_URI=788989025800.dkr.ecr.ap-south-1.amazonaws.com/demo_ecr
       - docker pull $REPOSITORY_URI:$IMAGE_TAG
       - echo Logging in to Amazon EKS...
-#       - aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $AWS_CLUSTER_NAME
+     #- aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $AWS_CLUSTER_NAME
       - aws eks --name cicd-demo --region ap-south-1 --role-arn arn:aws:iam::788989025800:role/eksctl-cicd-demo-cluster-ServiceRole-O9PZ2S1TCWUQ
       - echo check config 
-#       - kubectl config view --minify
-#     - aws eks --region ap-south-1 update-kubeconfig --name cicd-demo
+     #- kubectl config view --minify
+     #- aws eks --region ap-south-1 update-kubeconfig --name cicd-demo
       - echo check kubectl access
       - kubectl get svc
       
