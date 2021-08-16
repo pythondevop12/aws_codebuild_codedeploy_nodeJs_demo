@@ -19,10 +19,10 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon EKS...
-#       - aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $AWS_CLUSTER_NAME
+      - aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $AWS_CLUSTER_NAME
       - echo check config 
 #       - kubectl config view --minify
-      - aws eks --region ap-south-1 update-kubeconfig --name cicd-demo
+#       - aws eks --region ap-south-1 update-kubeconfig --name cicd-demo
       - echo check kubectl access
       - kubectl get svc
       - echo Logging in to Amazon ECR...
