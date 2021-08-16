@@ -20,7 +20,7 @@ phases:
     commands:
       - echo Logging in to Amazon EKS...
 #       - aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $AWS_CLUSTER_NAME
-      - aws eks update-kubeconfig --name cicd-demo --region ap-south-1 --role-arn arn:aws:iam::788989025800:role/eksctl-cicd-demo-cluster-ServiceRole-O9PZ2S1TCWUQ
+      - aws eks --name cicd-demo --region ap-south-1 --role-arn arn:aws:iam::788989025800:role/eksctl-cicd-demo-cluster-ServiceRole-O9PZ2S1TCWUQ
       - echo check config 
 #       - kubectl config view --minify
 #       - aws eks --region ap-south-1 update-kubeconfig --name cicd-demo
